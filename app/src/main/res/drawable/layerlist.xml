@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/compose_orb_shadow">
+        <bitmap
+            android:gravity="top"
+            android:src="@drawable/mailsdk_avatar_orb_female1" />
+    </item>
+    <item android:id="@+id/compose_orb_container">
+        <bitmap
+            android:gravity="bottom"
+            android:src="@drawable/mailsdk_compose_cloud_amazon" />
+    </item>
+</layer-list>

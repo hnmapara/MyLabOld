@@ -1,0 +1,70 @@
+BEGIN:VCALENDAR
+    PRODID://Yahoo//Calendar//EN
+    VERSION:2.0
+    METHOD:REQUEST
+    BEGIN:VEVENT
+        SUMMARY:Multiple Attendees Event
+        DESCRIPTION:This is the event body.\nWe can write anything here.
+        CLASS:PUBLIC
+        DTSTART;TZID=Asia/Kolkata:20141014T130000
+        DTEND;TZID=Asia/Kolkata:20141014T133000
+        LOCATION:At my desk
+        PRIORITY:0
+        SEQUENCE:0
+        STATUS:CONFIRMED
+        UID:c67c4485-8025-4041-9ca6-a53e58bbc38c
+        CATEGORIES:invite
+        DTSTAMP:20141020T191621Z
+        ATTENDEE;PARTSTAT=NEEDS-ACTION;ROLE=REQ_PARTICIPANT;RSVP=TRUE;SCHEDULE-STAT
+            US=1.1:mailto:harshit.mapara@yahoo.com
+        ATTENDEE;PARTSTAT=NEEDS-ACTION;ROLE=REQ_PARTICIPANT;RSVP=TRUE;SCHEDULE-STAT
+            US=1.1:mailto:mapara@yahoo-inc.com
+        ORGANIZER;CN=harshit mapara;SENT-BY="mailto:mapara_100khiladi@yahoo.co.in":
+            mailto:mapara_100khiladi@yahoo.co.in
+        X-YAHOO-YID:mapara_100khiladi
+        TRANSP:OPAQUE
+        STATUS:CONFIRMED
+        X-YAHOO-USER-STATUS:BUSY
+        X-YAHOO-EVENT-STATUS:BUSY
+        BEGIN:VALARM
+            ACTION:X_YAHOO_CALENDAR_ACTION_IM
+            SUMMARY:This is alarm notification.
+            DESCRIPTION:
+            TRIGGER;RELATED=START:-PT5M
+        END:VALARM
+    END:VEVENT
+    BEGIN:VTIMEZONE
+        TZID:Asia/Kolkata
+        TZURL:http://tzurl.org/zoneinfo/Asia/Kolkata
+        X-LIC-LOCATION:Asia/Kolkata
+        BEGIN:STANDARD
+            TZOFFSETFROM:+055328
+            TZOFFSETTO:+055320
+            TZNAME:HMT
+            DTSTART:18800101T000000
+            RDATE:18800101T000000
+        END:STANDARD
+        BEGIN:STANDARD
+            TZOFFSETFROM:+055320
+            TZOFFSETTO:+0630
+            TZNAME:BURT
+            DTSTART:19411001T000000
+            RDATE:19411001T000000
+        END:STANDARD
+        BEGIN:STANDARD
+            TZOFFSETFROM:+0630
+            TZOFFSETTO:+0530
+            TZNAME:IST
+            DTSTART:19420515T000000
+            RDATE:19420515T000000
+            RDATE:19451015T000000
+        END:STANDARD
+        BEGIN:DAYLIGHT
+            TZOFFSETFROM:+0530
+            TZOFFSETTO:+0630
+            TZNAME:IST
+            DTSTART:19420901T000000
+            RDATE:19420901T000000
+        END:DAYLIGHT
+    END:VTIMEZONE
+END:VCALENDAR

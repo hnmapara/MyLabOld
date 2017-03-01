@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginTop="10dp"
+            android:text="New Corporate Event"
+            android:id="@+id/textView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginTop="10dp"
+            android:text="Tuesday, Nov 4, 2014"
+            android:layout_below="@id/textView"
+            android:id="@+id/textView2" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="4:00 PM - 6:00 PM"
+            android:layout_below="@id/textView2"
+            android:id="@+id/textView3" />
+        <RelativeLayout
+            android:id="@+id/event_band"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView3">
+
+            <LinearLayout
+                android:id="@+id/event_linear_container"
+                android:layout_width="492dp"
+                android:layout_height="15dp"
+                android:background="@android:color/darker_gray"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.1">
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1">
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1">
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1">
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1">
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1">
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1">
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1">
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1">
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="492dp"
+                android:layout_height="19dp"
+                android:orientation="horizontal"
+                android:layout_below="@id/event_linear_container" >
+                <TextView
+                    android:id="@+id/txt_1st_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.1"
+                    android:textSize="10sp"
+                    android:text="12pm"/>
+                <TextView
+                    android:id="@+id/txt_2nd_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:textSize="10sp"
+                    android:text="1"/>
+                <TextView
+                    android:id="@+id/txt_3rd_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:textSize="10sp"
+                    android:text="2"/>
+                <TextView
+                    android:id="@+id/txt_4th_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:text="3"/>
+                <TextView
+                    android:id="@+id/txt_5th_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:text="4"/>
+                <TextView
+                    android:id="@+id/txt_6th_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:textSize="10sp"
+                    android:text="12pm"/>
+                <TextView
+                    android:id="@+id/txt_7th_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:text="6"/>
+                <TextView
+                    android:id="@+id/txt_8th_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:text="7"/>
+                <TextView
+                    android:id="@+id/txt_9th_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:textSize="10sp"
+                    android:text="8"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:text="OPEN"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:text="ACCEPT"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/event_band" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView3"
+            android:text="MAYBE"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/event_band"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView4"
+            android:text="DECLINE"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@id/event_band"
+            android:layout_alignParentRight="true" />
+
+        <View
+            android:id="@+id/event_seperator1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/imageView2"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:id="@+id/label_who"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginTop="10dp"
+            android:text="Who"
+            android:layout_below="@id/event_seperator1"
+          />
+
+        <TextView
+            android:id="@+id/orgainzer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:text="Harshit Mapara"
+            android:layout_below="@id/event_seperator1"
+            android:layout_toRightOf="@id/label_who"
+            />
+
+        <TextView
+            android:id="@+id/label_orgainzer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="(Organizer)"
+            android:layout_below="@id/event_seperator1"
+            android:layout_toRightOf="@id/orgainzer_name"
+            />
+        <TextView
+            android:id="@+id/orgainzer_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:text="Barack Obama"
+            android:layout_below="@id/orgainzer_name"
+            android:layout_toRightOf="@id/label_who"
+            />
+        <TextView
+            android:id="@+id/label_where"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginTop="10dp"
+            android:text="Where"
+            android:layout_below="@id/orgainzer_name2"
+            />
+        <TextView
+            android:id="@+id/event_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:text="CR-SMVD-04 Pai Gow"
+            android:layout_below="@id/orgainzer_name2"
+            android:layout_toRightOf="@id/label_who"
+            />
+        <View
+            android:id="@+id/event_seperator2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/label_where"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:id="@+id/event_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_marginTop="10dp"
+            android:text="We are one week from the amazing event! This will be a fun afternoo of networking with your peers and getting to know each other over a friendly laser tag tournament."
+            android:layout_below="@id/event_seperator2"
+            android:inputType="textMultiLine"
+            />
+
+
+    </RelativeLayout>
+
