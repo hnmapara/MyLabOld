@@ -10,6 +10,7 @@ public class MaxPointInLine {
     public static void main(String[] args) {
         Point[] points = {new Point(0,1),new Point(1,1),new Point(2,2),new Point(3,3),
                 new Point(1,2),new Point(2,3),new Point(4,4),new Point(5,5)};
+        //Point[] points = {new Point(0,1),new Point(1,2),new Point(2,2),new Point(3,3)};
         System.out.println(maxPoints(points));
     }
     public static int maxPoints(Point[] points) {
@@ -36,16 +37,18 @@ public class MaxPointInLine {
                         continue;
                     }
                     double k = (double)(points[j].y - points[i].y) / (double)(points[j].x - points[i].x);
-                    System.out.println("i: " + points[i] + ", j:" + points[j] +  "  slop :" + k);
+
                     if(hm.containsKey(k)){
                         hm.put(k,hm.get(k) + 1);
                     }else{
                         hm.put(k, 2);
                     }
                     result = Math.max(result, hm.get(k) + samep);
+                    System.out.println("i: " + points[i] + ", j:" + points[j] +  "  slop :" + k + "  hm:" + hm.get(k) + "  MAX =" + result);
                 }
             }
             result = Math.max(result, samex);
+            System.out.println("MAX = " + result);
         }
         return result;
     }
