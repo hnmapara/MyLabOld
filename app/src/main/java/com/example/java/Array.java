@@ -54,6 +54,7 @@ public class Array {
     }
 
     public static int getSubSeqDivisibleByk() {
+        //NOT WORKING. SEE NEXT SOLUTION
         int k = 3;
         int[] arr = {1,2,3,4};  //output -> 4 ( i.e {1,2}, {3}, {1,2,3}, {2,3,4}
 
@@ -73,6 +74,35 @@ public class Array {
         System.out.println("getSubSeqDivisibleByk : " + count);
 
         return count;
+    }
 
+    public static int getSubSeqDivisibleBykWorking() {
+//        int k = 3;
+//        int[] nums = {1,2,3,4};  //output -> 4 ( i.e {1,2}, {3}, {1,2,3}, {2,3,4}
+        int k = 2;
+        int[] nums = {1, 2, 1, 2, 1, 2};
+
+        int count = 0;
+        int [] sum = new int[nums.length];
+        sum[0] = nums[0];
+
+        for(int i = 1; i < nums.length; i++){
+            sum[i] = sum[i-1] + nums[i];
+        }
+
+        int [] kVal = new int[k];
+
+        for(int i = 0; i < sum.length; i++){
+            int mod = sum[i] % k;
+
+            if(mod == 0)
+                count++;
+
+            count += kVal[mod];
+            kVal[mod] += 1;
+
+        }
+        System.out.println(count);
+        return count;
     }
 }

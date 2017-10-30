@@ -1,10 +1,5 @@
 package com.example.java;
 
-
-
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -560,7 +555,6 @@ public class MyMain {
         return Integer.signum(vals1.length - vals2.length);
     }
 
-    @Nullable
     public static String getMatchingVersion(List<String> keysList, Map<String, String> myMap) {
 
 

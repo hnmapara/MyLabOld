@@ -1,6 +1,8 @@
 package com.example.java;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -9,9 +11,123 @@ import java.util.Set;
 
 public class Strings {
     public static void main(String[] args) {
-        System.out.println(" longest non repeating substring size = " + lengthOfLongestNonRepeatingSubstring("ABBKEWK"));
+        //System.out.println(" longest non repeating substring size = " + lengthOfLongestNonRepeatingSubstring("ABBKEWK"));
+        System.out.println("Minimum substring = " + minWindowHavingAllCharacter("ADOBECODEBANC", "CDE"));
+        System.out.println("Minimum substring = " + minWindowHavingAllCharacter("ADOBECODEBANC", "ADE"));
+        System.out.println("Minimum substring = " + minWindowHavingAllCharacter("ABCDCA", "AD"));
+        System.out.println("Minimum substring = " + minWindowHavingAllCharacter("ADOBECODEBANC", "ABC"));
+        System.out.println("Minimum substring = " + minWindowHavingAllCharacter("ADOBECODEBANC", "RAD"));
     }
 
+    public static String minWindowHavingAllCharacter(String str, String substr) {
+        int targetCount = substr.length();
+        Map<Character, Integer> targetMap = new HashMap<>();
+        for (char c : substr.toCharArray()) {
+            if (targetMap.containsKey(c)) {
+                targetMap.put(c, targetMap.get(c) + 1);
+            } else {
+                targetMap.put(c, 1);
+            }
+        }
+
+        int minStart=0, minLen=Integer.MAX_VALUE;
+        int head=0, tail=0, counter=0;
+        Map<Character, Integer> smap = new HashMap<>();
+        while(tail < str.length()) {
+            if (targetMap.containsKey(str.charAt(tail))) {
+                smap.put(str.charAt(tail), smap.get(str.charAt(tail)) == null ? 1 : smap.get(str.charAt(tail)) + 1);
+                counter++;
+            }
+            if (counter == targetCount) {
+                if (isValid(targetMap, smap)) { //find smaller window
+                    if (minLen > (tail - head)) {
+                        minStart = head;
+                        minLen = tail - head;
+                    }
+                    while (!targetMap.containsKey(str.charAt(head))) {
+                        if (minLen > (tail - head)) {
+                            minStart = head;
+                            minLen = tail - head;
+                        }
+                        head++;
+                    }
+                    if (minLen > (tail - head)) {
+                        minStart = head;
+                        minLen = tail - head;
+                    }
+                    smap.put(str.charAt(head), smap.get(str.charAt(head)) - 1);
+                    counter--;
+                    head++;
+                } else {
+                    while (!targetMap.containsKey(str.charAt(head))) {
+                        head++;
+                    }
+                    smap.put(str.charAt(head), smap.get(str.charAt(head)) - 1);
+                    counter--;
+                    head++;
+                }
+
+            }
+            tail++;
+        }
+
+        return minLen == Integer.MAX_VALUE ? "" : str.substring(minStart, minStart+minLen+1);
+    }
+
+    public static boolean isValid(Map<Character, Integer> targetMap, Map<Character, Integer> smap) {
+        for (Character c : targetMap.keySet()) {
+            if (smap.get(c) == null) return false;
+            if (smap.get(c).intValue() != targetMap.get(c).intValue()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static String minWindowHavingAllCharacterLeetCode(String str, String substr) {
+        //String str = "ADOBECODEBANC";
+        //String substr = "ABC";
+        //O/p -> "BANC"
+
+        int[] map = new int[128];
+        for (char c : substr.toCharArray()) {
+            map[c] = map[c] + 1;
+        }
+        int counter = substr.length(), begin = 0, end = 0, d = Integer.MAX_VALUE, head = 0;
+
+        while(end < str.length()) {
+            if (map[str.charAt(end)] > 0) {
+                counter--; //in substr
+            }
+            map[str.charAt(end)]--;
+            end++;
+            while (counter == 0) { //valid
+                if (end - begin < d) d = end - (begin);
+                if (map[str.charAt(begin)] == 0) {
+                    counter++; //make invalid
+                }
+                map[str.charAt(begin)]++;
+                begin++;
+            }
+        }
+        return d ==Integer.MAX_VALUE ? "" : str.substring(begin-1, end);
+    }
+
+/*
+    public string minWindowLeetCode(string s, string t) {
+        vector<int> map(128,0);
+        for(auto c: t) map[c]++;
+        int counter=t.size(), begin=0, end=0, d=INT_MAX, head=0;
+        while(end<s.size()){
+            if(map[s[end++]]-->0) counter--; //in t
+            while(counter==0){ //valid
+                if(end-begin<d)  d=end-(head=begin);
+                if(map[s[begin++]]++==0) counter++;  //make it invalid
+            }
+        }
+        return d==INT_MAX? "":s.substr(head, d);
+    }
+*/
     static int lengthOfLongestNonRepeatingSubstring(String s) {
         //System.out.println(" longest non repeating substring size = " + lengthOfLongestNonRepeatingSubstring("ABBKEWK"));
 

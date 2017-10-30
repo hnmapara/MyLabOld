@@ -11,7 +11,10 @@ public class MaxPointInLine {
         Point[] points = {new Point(0,1),new Point(1,1),new Point(2,2),new Point(3,3),
                 new Point(1,2),new Point(2,3),new Point(4,4),new Point(5,5)};
         //Point[] points = {new Point(0,1),new Point(1,2),new Point(2,2),new Point(3,3)};
-        System.out.println(maxPoints(points));
+        //-6 -17, 5 -16, -18 -17, 2 -4, 5 -13, -2 20
+        Point[] points1 = {new Point(-6,-17),new Point(5,-16),new Point(-18,-17),new Point(2,-4), new Point(5, -13),
+        new Point(-2, 20)};
+        System.out.println(maxPoints(points1));
     }
     public static int maxPoints(Point[] points) {
 
