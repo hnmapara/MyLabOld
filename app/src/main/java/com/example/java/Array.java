@@ -1,7 +1,10 @@
 package com.example.java;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.Semaphore;
 
 /**
  * Created by mapara on 9/9/17.
@@ -9,7 +12,8 @@ import java.util.List;
 
 public class Array {
     public static void main(String[] args) {
-        getSubSeqDivisibleByk();
+        //getSubSeqDivisibleByk();
+        maxSubArray();
     }
 
     static void mergeSortedArrayInPlace() {
@@ -41,12 +45,17 @@ public class Array {
     }
 
     public static int maxSubArray() {
-        int[] arr = { -2, -4, 3, -1, 2, -1 };
+        //int[] arr = { -2, -4, 3, -1, 2, -1 };
+        int[] arr = { -2, -4, -3, -1, -2, -7 };
         int max = arr[0];
         int cmax = arr[0];
-        for (int x : arr) {
-            cmax = cmax + x;
-            if (cmax < 0) cmax = 0;
+//        for (int x : arr) {
+//            cmax = cmax + x;
+//            if (cmax < 0) cmax = 0;
+//            max = Math.max(max, cmax);
+//        }
+        for (int i = 1; i < arr.length; i++) {
+            cmax = Math.max(arr[i], cmax + arr[i]);
             max = Math.max(max, cmax);
         }
         System.out.println("max sum window : " + max);
@@ -104,5 +113,33 @@ public class Array {
         }
         System.out.println(count);
         return count;
+    }
+
+    public static boolean hasSumOfSubSeqDivisibleByk() {
+        int arr[] = {23, 2, 6, 4, 7};
+        int k = 6;
+        int minLengthOfNum = 2;
+
+        /*
+        (a+(n*x))%x is same as (a%x)
+
+        For e.g. in case of the array [23,2,6,4,7] the running sum is [23,25,31,35,42] and the remainders are [5,1,1,5,0].
+        We got remainder 5 at index 0 and at index 3. That means, in between these two indexes we must have added a number which is multiple of the k.
+        Hope this clarifies your doubt :)
+         */
+
+        Map<Integer, Integer> mymap = new HashMap<>();
+        int runningSum = 0;
+        for (int i = 0; i< arr.length; i++) {
+            runningSum = runningSum + arr[i];
+            // If k == 0, that means we just need to check the runningsum as previuos value in map
+            if (k != 0) runningSum = runningSum % k;
+            Integer prev = mymap.get(runningSum);
+            if (prev != null) {
+                if (i - prev >= minLengthOfNum) return true;
+            }
+            mymap.put(runningSum, i);
+        }
+        return false;
     }
 }
