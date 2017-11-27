@@ -1,7 +1,9 @@
 package com.example.java;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -168,5 +170,54 @@ public class Strings {
         }
 
         return max;
+    }
+
+    static List<Integer> findStartIndexOfAllAnagramsOfTargetString(String s, String p) {
+
+        // Input: s: "cbaebabacd" p: "abc"
+
+        // Output: [0, 6]
+            List<Integer> res = new ArrayList<>();
+            Map<Character, Integer> targetMap = new HashMap<>();
+
+            //Init map with target character and count
+            for (int i=0; i<p.length();i++) {
+                targetMap.put(p.charAt(i), targetMap.getOrDefault(p.charAt(i), 0) + 1);
+            }
+
+            int counter = 0;
+            int tLen = p.length();
+            for (int i=0; i< s.length(); i++) {
+
+                //when window moves, put back the characters going out of window and reduce the counter if the
+                //character count is >=1
+                if(i >= tLen) {
+                    if (targetMap.containsKey(s.charAt(i-tLen))){
+                        targetMap.put(s.charAt(i-tLen), targetMap.get(s.charAt(i-tLen))+ 1);
+                        if (targetMap.get(s.charAt(i-tLen)) >= 1)
+                            counter--;
+                    }
+                }
+                //if the character is not in map, continue
+                if (!targetMap.containsKey(s.charAt(i))) {
+                    continue;
+                }
+
+                //character is found in map. reduce the character count and increase the counter
+                //only if the character count is >= 0
+                targetMap.put(s.charAt(i), targetMap.get(s.charAt(i)) - 1);
+                if (targetMap.get(s.charAt(i)) >= 0)
+                    counter++;
+
+                //If the counter == target length size, add to the result set
+                if (counter == tLen) {
+                    res.add(i-tLen+1);
+                }
+
+                // SLIDE THE WINDOW....
+            }
+
+            return res;
+
     }
 }
