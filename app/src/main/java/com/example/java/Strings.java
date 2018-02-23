@@ -182,7 +182,7 @@ public class Strings {
 
             //Init map with target character and count
             for (int i=0; i<p.length();i++) {
-                targetMap.put(p.charAt(i), targetMap.getOrDefault(p.charAt(i), 0) + 1);
+                targetMap.put(p.charAt(i), targetMap.get(p.charAt(i)) == null?  0 : targetMap.get(p.charAt(i)) + 1);
             }
 
             int counter = 0;
