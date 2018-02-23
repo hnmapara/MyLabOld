@@ -52,37 +52,6 @@ public class MyMain {
         } catch (Exception e) {
             e.printStackTrace();
         }
-//        String ics_path = "/Users/mapara/work/jf_sent.ics";
-//        printSpyral();
-//        try{
-//            TreeMap<String,String> map = getProperties(ics_path);
-//            System.out.println(map);
-//        }catch(Exception e) {
-//            System.out.println(e);
-//        }
-
-//        try {
-//            FileInputStream fis = new FileInputStream(ics_path);
-//            CalendarBuilder builder = new CalendarBuilder();
-//            Calendar calendar = builder.build(fis);
-//
-//            for (Iterator i = calendar.getComponents().iterator(); i.hasNext();) {
-//                Component component = (Component) i.next();
-//                System.out.println("Component [" + component.getName() + "]");
-//
-//                for (Iterator j = component.getProperties().iterator(); j.hasNext();) {
-//                    Property property = (Property) j.next();
-//                    System.out.println("Property [" + property.getName() + ", " + property.getValue() + "]");
-//                }
-//            }
-//
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (ParserException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
     }
 
     private static void m10() {
